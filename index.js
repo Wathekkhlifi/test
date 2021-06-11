@@ -1,10 +1,6 @@
-var http = require("http");
+const express = require("express");
+const app = express();
 
-http
-  .createServer(function (req, res) {
-    res.writeHead(200, { "Content-Type": "text/plain" });
-    res.end("Hello Node.js\n");
-  })
-  .listen(80, "161.156.160.146");
+app.get("/", (req, res) => res.send("Hello World!"));
 
-console.log("Server running at http://161.156.160.146:80/");
+app.listen(3000, () => console.log("Server listening on port 3000!"));
